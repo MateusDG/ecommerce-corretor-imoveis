@@ -52,26 +52,31 @@ A landing page é totalmente responsiva e otimizada para:
 4. Teste o formulário de busca na seção hero
 5. Explore as propriedades e recursos interativos
 
+### Frontend (React + Vite)
+1. Entre na pasta `frontend/`
+2. Instale dependências: `npm install`
+3. Rode em dev: `npm run dev` e acesse o URL indicado (ex.: http://localhost:5173)
+4. Para build: `npm run build` (gera `dist/`)
+
 ## 📁 Estrutura do Projeto
 
 ```
-Landing Page/
-├── index.html          # Estrutura principal
-├── styles.css          # Estilos CSS
-├── script.js           # Funcionalidades JavaScript
-├── images/             # Imagens do projeto
-│   ├── hero-background-49b4ff.png
-│   ├── property-1.png
-│   ├── property-2-5b6fd0.png
-│   ├── property-3.png
-│   ├── property-4.png
-│   ├── property-5.png
-│   ├── features-circle.png
-│   ├── recent-property-1.png
-│   ├── recent-property-2.png
-│   ├── footer-property-1.png
-│   └── footer-property-2.png
-└── README.md           # Documentação
+ecommerce-corretor-imoveis/
+├── index.html                    # Página principal
+├── images/                       # Imagens do projeto
+├── src/
+│   ├── css/
+│   │   └── main.css             # Entrada de estilos (importa estilos atuais)
+│   └── js/
+│       ├── app.js               # Lógica de UI, filtros e renderização
+│       ├── services/
+│       │   └── db.js            # Camada de acesso ao Firestore
+│       └── firebase/
+│           └── init.js          # Inicialização do Firebase + seed/utilitários
+├── config/
+│   └── firestore.rules           # Regras do Firestore (dev)
+├── README.md                     # Documentação
+└── AGENTS.md                     # Guia de contribuição
 ```
 
 ## 🎨 Paleta de Cores

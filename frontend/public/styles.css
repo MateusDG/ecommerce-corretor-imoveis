@@ -71,8 +71,16 @@ body {
 }
 
 .logo {
-    width: 176px;
-    height: 40px;
+    width: 1550px;
+    height: 176px;
+}
+
+.logo img,
+.logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .nav-items {
@@ -729,6 +737,14 @@ body {
 .footer-logo {
     width: 312px;
     height: 71px;
+}
+
+.footer-logo img,
+.footer-logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .footer-desc {
