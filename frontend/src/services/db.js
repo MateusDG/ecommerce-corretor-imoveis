@@ -24,6 +24,11 @@ export async function getRecentProperties() {
   return snap.docs.map(d => ({ id: d.id, ...d.data() }))
 }
 
+export async function getAllProperties() {
+  const snap = await getDocs(collection(db, 'properties'))
+  return snap.docs.map(d => ({ id: d.id, ...d.data() }))
+}
+
 export async function getContact() {
   const ref = doc(db, 'settings', 'contact')
   const s = await getDoc(ref)

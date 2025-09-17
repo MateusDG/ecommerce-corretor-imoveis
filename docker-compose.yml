@@ -1,0 +1,39 @@
+
+services:
+  # Aplicação React (Produção)
+  app:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    container_name: es-terrenos
+    restart: unless-stopped
+    networks:
+      - terreno-network
+
+  # Desenvolvimento React com hot reload
+  app-dev:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    container_name: es-terrenos-dev
+    restart: unless-stopped
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
+    networks:
+      - terreno-network
+    profiles:
+      - dev
+
+networks:
+  terreno-network:
+    driver: bridge
+
+# Configuração para usar com OrbStack
+# Para executar:
+# docker-compose up -d                    # Executa ambas as versões de produção
+# docker-compose --profile dev up -d      # Inclui também a versão de desenvolvimento
